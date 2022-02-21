@@ -149,7 +149,7 @@ function handleBoardSweep(boardMatrix){
     let rowScore = 10
     outerLoop: for(let y = boardMatrix.length - 1; y>=0; y--){
         for(let x =0; x<boardMatrix[y].length;x++){
-            if(boardMatrix[y][x] == 0){
+            if(boardMatrix[y][x] === 0){
                 continue outerLoop
             }
         }
@@ -181,6 +181,8 @@ function resetShape(shape){
     dropCounter = 0
     if(isCollide(boardMatrix, shape)){
         clearBoardMatrix(boardMatrix)
+        score = 0
+        text.innerHTML = score
     }
 }
 function dropShape(){
